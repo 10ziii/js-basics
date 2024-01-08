@@ -15,6 +15,11 @@ console.log(person['name']);
 console.log(person[sym])
 console.log(typeof person[sym])
 console.log([key1],person['key1'])
+console.log(Object.keys(person))
+console.log(person.hasOwnProperty("name"));
 
 //to avoid making change to objects 
 Object.freeze(person);
+
+/* API is value that we get from backend earlier the data format for api was
+xml, nowdays JSON is the data format for API  */
