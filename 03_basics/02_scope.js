@@ -9,7 +9,7 @@ let and const and if present both inside global and block then the val where it 
 in case of var the latter gets priority but we avoid such code
 we avoid any leakage of value outside scope so using var inside of scope is totally
 prohibited cuz it is easily accessed outside the scope*/
-
+ 
 
 let a = 43;
 const b = 78;
@@ -19,7 +19,7 @@ console.log(b);
 console.log(c);
 
 //Lexical scope is the ability for the function scope to access variables from the parent scope
-a
+
 var val = "pub";
 if(true){
     var val = "hub";
