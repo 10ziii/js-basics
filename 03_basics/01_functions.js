@@ -40,4 +40,4 @@ function addTwoNumbers(numb1,numb2){
     let result = numb1+numb2;
     return result;
 }
-const result=addTwoNumbers(4,5);
+const result=addTwoNumbers(4,5)

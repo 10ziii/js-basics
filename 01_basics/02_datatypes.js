@@ -2,4 +2,4 @@
 // alert("hello"); // alert in node works in a different way as compared in browser
 console.log(Number.MAX_SAFE_INTEGER);
 console.log(2**53);
-/** type of null is object whereas type of umdefined is undefined */
+/** type of null is object whereas type of undefined is undefined */
