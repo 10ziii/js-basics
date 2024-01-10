@@ -5,9 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NODE LIST - DOM</title>
 </head>
-<body>
-    <script>
-        
-    </script>
+<body style="background-color: #212121; color: #fff;">
 </body>
+<script>
+        const body = document.body;
+        const div = document.createElement("div");
+        div.className  = "main";
+        div.id = Math.floor(Math.random()*10+1)
+        console.log(div)
+        div.setAttribute("title","generated title")
+        div.style.backgroundColor="green";
+        div.style.padding = "15px";
+        //div.innerHTML = "DOM TUTORIAL"
+        const textNode = document.createTextNode("DOM TUTORIALS");
+        div.append(textNode);
+        body.append(div)
+</script>
 </html>
