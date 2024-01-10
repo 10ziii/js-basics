@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM MANIPULATION</title>
+</head>
+<body style="background-color:#212121;color:white";>
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    //TO ADD LI ELEMENT
+    function addLanguage(langName){
+        const ul = document.querySelector(".language")
+        const newLi = document.createElement("li");
+        const textNode = document.createTextNode(langName);
+        // newLi.innerText = langName;
+        newLi.appendChild(textNode);
+        ul.appendChild(newLi);
+    }
+    addLanguage("Python");
+    addLanguage("RubyOnRails");/*the problem with this method comes when there is a large no of li
+    on addig new li everytime the tree traverses again and again leading to prformance issues to tackle this problem
+     we have to optimise it*/
+    function addOptimisedLanguage(langName){
+        const Li = document.createElement("li");
+        Li.appendChild(document.createTextNode(langName));
+        document.querySelector(".language").appendChild(Li);
+        //this will avoid traversing
+    }
+    addOptimisedLanguage("Python");
+    addOptimisedLanguage("RubyOnRails");
+
+    //TO EDIT LI ELEMENT
+    const secondLi = document.querySelector("li:nth-child(2)");
+    // secondLi.innerHTML = "Golanng";
+    const newLi = document.createElement("li");
+    newLi.append(document.createTextNode("Golangg"))
+    secondLi.replaceWith(newLi);
+
+    //TO REMOVE LI ELEMENTl
+    const firstElement = document.querySelector("li:first-child");
+    firstElement.remove()
+</script>
+</html>
