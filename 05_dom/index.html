@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM</title>
-    <style>
-        .bg-black{
-            background-color:#212121;
-        }
-        h1,p{
-            color:white;
-        }
-    </style>
-    <script src="01_dom.js" defer></script>
+    <!-- <script src="01_dom.js" defer></script> -->
 </head>
-<body class="bg-black">
-    <div>
-        <h1 id="title" class="heading">DOM Learning</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-
-        <ul>
-            <li>one</li>
-            <li>two</li>
-            <li>three</li>
-        </ul>
-    </div>
+<body style="background-color: #212121; color: #fff;">
+  <div class="parent">
+    <div class="day">Monday</div>
+    <div class="day">Tuesday</div>
+    <div class="day">Wednesday</div>
+    <div class="day">Thursday</div>
+  </div>
 </body>
+<script>
+    const parent = document.querySelector(".parent");
+    console.log(parent)
+    const child = parent.children;
+    console.log(parent.children[1].innerHTML)
+
+    for(let i=0;i<child.length;i++){
+        child[i].style.backgroundColor = "red"
+        console.log(child[i].innerHTML)
+    }
+    console.log(parent.firstElementChild);
+    console.log(parent.lastElementChild);
+
+    const day = document.querySelector(".day")
+    console.log(day.parentElement)
+    console.log(day.nextElementSibling);
+
+    console.log("NODES: ",parent.childNodes)
+</script>
 </html>
