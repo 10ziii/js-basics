@@ -19,7 +19,7 @@ console.log(addNum(34,56));
 const hello = ()=>(console.log("hello"));
 hello();
 
-//IIFE - Immediately invoked arrow functions, these type of syntax is used avoid getting populated from the global scope
+//IIFE - Immediately invoked function expression, these type of syntax is used avoid getting populated from the global scope
 (function hey(msg){
     console.log("hey");
     console.log(msg)
