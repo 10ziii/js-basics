@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XHR</title>
+
+    <style>
+        .profile{
+            text-align: center;
+        }
+
+        .image{
+            display: inline-block;
+            width:300px;
+            height:300px;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        img{
+            width:100%;
+        }
+
+        .followers{
+            margin:20px;
+        }
+
+        .btn{
+            display: inline-block;
+            border:none;
+            font-size: medium;
+            border-radius: 10px;
+            padding:10px 20px;
+            cursor:pointer;
+            border: none;
+            font-weight:bold;
+            text-transform: uppercase;
+            transition :all 0.3s ease-in-out;
+        }
+
+        .btn:hover{
+            background-color: rgba(255, 255, 255, 0.774);
+        }
+
+    </style>
+
+</head>
+<body style = "background-color: #212121;
+color:white;"> 
+    <h1>XML HTTP Request</h1>
+
+    <div class = "profile">
+
+        <div class = "image">
+
+        </div>
+        <div class = "followers">
+
+        </div>
+
+        <button class = btn>
+            BUTTON
+        </button>
+
+    </div>
+
+</body>
+    <script>
+        const URL = "https://api.github.com/users/hiteshchoudhary";
+        const xhr = new XMLHttpRequest();
+        console.log(xhr);
+        // console.log(xhr.readyState)
+
+        xhr.open("GET",URL); 
+        // console.log(xhr.readyState)
+        
+        xhr.onreadystatechange = function(){
+            // console.log(xhr.readyState)
+            if(xhr.readyState === 4){
+                // console.log(this.responseText);
+                const data = JSON.parse(this.responseText);
+                const followers = (data.followers);
+                const photo = data.avatar_url;
+                console.log(followers)
+                console.log(photo)
+
+                const IMG = document.querySelector(".image");
+                const FOLLOWERS = document.querySelector(".followers");
+                const button = document.querySelector(".btn");
+                
+                button.addEventListener("click",(e)=>{
+                e.preventDefault();
+                FOLLOWERS.innerHTML = `<h3>${followers}</h3>`;
+                IMG.innerHTML = `<img src=${photo}></img>`;
+               })
+            }
+        }
+        xhr.send();
+    </script>
+</html>
